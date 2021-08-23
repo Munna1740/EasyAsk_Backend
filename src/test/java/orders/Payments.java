@@ -35,6 +35,12 @@ public class Payments {
 		payments.click();
 		Thread.sleep(2000);
 		driver.close();
+		
+//		WebElement payments = driver.findElement(By.xpath("//a[@href='http://18.209.122.163/admin/payment']"));
+//		payments.click();
+//		Thread.sleep(2000);
+//		driver.close();
+		
 
 	}
 

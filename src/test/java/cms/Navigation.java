@@ -1,4 +1,4 @@
-package sites;
+package cms;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,9 +6,12 @@ import org.openqa.selenium.WebElement;
 
 import Authentication.BaseClass;
 
-public class Sites {
-	public void site_reuse() throws InterruptedException {
+public class Navigation {
+	
+	public static void main(String[] args) throws InterruptedException {
 		WebDriver driver = BaseClass.getDriver();
+
+		// login
 		WebElement email = driver.findElement(By.name("email"));
 		WebElement password = driver.findElement(By.name("password"));
 
@@ -24,22 +27,14 @@ public class Sites {
 		login.click();
 		Thread.sleep(2000);
 
-		WebElement sites = driver.findElement(By.xpath("//a[@href='http://18.209.122.163/admin/site']"));
-		sites.click();
+		WebElement cms = driver.findElement(By.xpath("/html/body/div/div/nav/ul/li[14]/a"));
+		cms.click();
+		Thread.sleep(2000);
+
+		WebElement navigation = driver.findElement(By.xpath("//a[@href='http://18.209.122.163/admin/navigation']"));
+		navigation.click();
 		Thread.sleep(2000);
 		driver.close();
-		
-		
-		
-	}
-	
-	public static void main(String[] args) throws InterruptedException {
-		
-
-		Sites site = new Sites();
-		site.site_reuse();
-		
-
 
 	}
 
